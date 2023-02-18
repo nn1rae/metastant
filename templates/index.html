@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+      body {
+        background-image: url({{ url_for('static', filename='wetter01.jpg') }});
+        background-position: center top;
+        background-size: 100% auto;
+    }
+    
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
+    <link type="image/png" sizes="16x16" rel="icon" href=".../icons8-rainy-weather-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href=".../icons8-rainy-weather-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-rainy-weather-96.png">
+    <link rel="icon" type="image/png" sizes="72x72" href=".../icons8-rainy-weather-72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href=".../icons8-rainy-weather-96.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="57x57" href=".../icons8-rainy-weather-57.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="60x60" href=".../icons8-rainy-weather-60.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href=".../icons8-rainy-weather-72.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href=".../icons8-rainy-weather-76.png">
+    <meta name="msapplication-square70x70logo" content=".../icons8-rainy-weather-70.png">
+    <meta name="msapplication-TileColor" content="#C0FFEE">
+    <meta name="application-name" content="Beautiful application name">
+  </head>
+  <body>
+    <div id="sensors-container">
+      <div id="temp-sensor" class="sensor">
+        <div class="sensor-title">Temperature</div>
+        <div class="sensor-value">8</div>
+        <div class="sensor-unit">&deg;C</div>
+        <div class="sensor-popup">Temperature in Celsius</div>
+      </div>
+      <div id="wind-speed-sensor" class="sensor">
+        <div class="sensor-title">Wind Speed</div>
+        <div class="sensor-value">8</div>
+        <div class="sensor-unit">m/s</div>
+        <div class="sensor-popup">Wind speed in meters per second</div>
+      </div>
+      <div id="wind-direction-sensor" class="sensor">
+        <div class="sensor-title">Wind Direction</div>
+        <div class="sensor-value">8</div>
+        <div class="sensor-unit">°</div>
+        <div class="sensor-popup">Wind direction in degrees</div>
+      </div>
+      <div id="precipitation-sensor" class="sensor">
+        <div class="sensor-title">Precipitation</div>
+        <div class="sensor-value">8</div>
+        <div class="sensor-unit">mm</div>
+        <div class="sensor-popup">Precipitation in millimeters</div>
+      </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
