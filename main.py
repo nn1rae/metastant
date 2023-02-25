@@ -7,7 +7,7 @@ temperature, wind_direction, wind_speed, rain = 0,0 ,0, 0
 
 
 #ser = serial.Serial('COM3', 9600)
-ser = serial.Serial('/dev/cu.usbmodem1401', 9600)
+#ser = serial.Serial('/dev/cu.usbmodem1401', 9600)
 
 
 
@@ -15,7 +15,7 @@ ser = serial.Serial('/dev/cu.usbmodem1401', 9600)
 def get_data():
     while True:
         global temperature, wind_direction, wind_speed, rain
-        temperature, wind_direction, wind_speed, rain = ser.readline().decode().strip().split(':')
+        #temperature, wind_direction, wind_speed, rain = ser.readline().decode().strip().split(':')
         
 threading.Thread(target=get_data).start()
 
@@ -32,8 +32,9 @@ def get_sensor_data():
         'wind_speed': wind_speed,
         'rain': rain
     }
-
-    return jsonify(sensor_data)
+    response = jsonify(sensor_data)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route('/')
 def index():
