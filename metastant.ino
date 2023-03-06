@@ -60,7 +60,7 @@ void loop()
 
 float checkTemperature()
 {
-   if (currentMillis - startMillisTemperture >= 100)
+   if (currentMillis - startMillisTemperture >= 1000)
   {
   temper = analogRead(A0);
 
@@ -86,11 +86,11 @@ int CheckWindDirection(){
   else if (pepa >= 160 && pepa <= 170){windDirCode = 9;} //SSW
   else if (pepa >= 425 && pepa <= 440){windDirCode = 10;} //SW 
   else if (pepa >= 405 && pepa <= 415){windDirCode = 11;} //WSW
-  else if (pepa >= 560 && pepa <= 570){windDirCode = 12;} //W
-  else if (pepa >= 600 && pepa <= 610){windDirCode = 13;} //WNW
-  else if (pepa >= 475 && pepa <= 480){windDirCode = 14;} // NW
-  else if (pepa >= 300 && pepa <= 330){windDirCode = 15;} //NNW
-  else {windDirCode = pepa;} //No Direction Found
+  else if (pepa >= 635 && pepa <= 645){windDirCode = 12;} //W
+  else if (pepa >= 555 && pepa <= 570){windDirCode = 13;} //WNW
+  else if (pepa >= 470 && pepa <= 480){windDirCode = 14;} // NW
+  else if (pepa >= 590 && pepa <= 610){windDirCode = 15;} //NNW
+  else {windDirCode = 16;} //No Direction Found
   startMillisWindDirection = currentMillis;
   return windDirCode;
 
